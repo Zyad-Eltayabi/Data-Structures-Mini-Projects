@@ -9,6 +9,9 @@ namespace Data_Structures_Mini_Projects
             // Test doubly linked list
             MyDoublyLinkedList<int> myDoublyLinkedList = new MyDoublyLinkedList<int>();
 
+            if (myDoublyLinkedList.IsEmpty())
+                Console.WriteLine("yes, the linked list is empty");
+
             myDoublyLinkedList.InsertAtFront(5);
             myDoublyLinkedList.InsertAtFront(4);
             myDoublyLinkedList.InsertAtFront(3);
@@ -18,10 +21,11 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine("Linked List Content");
             myDoublyLinkedList.Print();
 
-            // print the number of node items
-            Console.WriteLine($"number of items in the linked list : {myDoublyLinkedList.Size()}");
 
-
+            if (myDoublyLinkedList.IsEmpty())
+                Console.WriteLine("yes, the linked list is empty");
+            else
+                Console.WriteLine($"Linked list is not empty and the number of items = {myDoublyLinkedList.Size()}");
         }
     }
 }

@@ -168,6 +168,7 @@
 
         public int Size() => _size;
         
+        public bool IsEmpty() => _size == 0;
     }
 
 
