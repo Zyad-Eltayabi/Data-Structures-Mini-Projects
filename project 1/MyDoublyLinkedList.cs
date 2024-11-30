@@ -17,7 +17,7 @@
     {
 
         public Node<T> head = null;
-
+        private int _size = 0;
         public void InsertAtFront(T value)
         {
             Node<T> newNode = new Node<T>(value);
@@ -25,6 +25,7 @@
             if (head == null)
             {
                 head = newNode;
+                _size++;
                 return;
             }
 
@@ -33,6 +34,7 @@
             newNode.next = firstNode;
             newNode.prev = null;
             head = newNode;
+            _size++;
         }
 
         public void Print()
@@ -71,10 +73,12 @@
                 prevNode.next.prev = newNode;
 
             prevNode.next = newNode;
+            _size++;
         }
 
         public void InsertAtEnd(T value)
         {
+            _size++;
             Node<T> newNode = new Node<T>(value);
 
             if (head == null)
@@ -98,6 +102,7 @@
             if (deletedNode == null || head == null)
                 return;
 
+            _size--;
             if (deletedNode.prev != null && deletedNode.next != null)
             {
                 deletedNode.prev.next = deletedNode.next;
@@ -128,6 +133,8 @@
             if (head == null)
                 return;
 
+            _size--;
+
             Node<T> current = head;
 
             if (current.next != null)
@@ -136,12 +143,15 @@
             head = current.next;
 
             current.next = null;
+
         }
 
         public void DeleteLastNode()
         {
             if (head == null)
                 return;
+
+            _size--;
 
             Node<T> current = head;
             while (current.next != null)
@@ -153,7 +163,11 @@
                 current.prev.next = null;
             else
                 head = null;
+
         }
+
+        public int Size() => _size;
+        
     }
 
 
