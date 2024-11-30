@@ -169,6 +169,14 @@
         public int Size() => _size;
         
         public bool IsEmpty() => _size == 0;
+
+        public void Clear()
+        {
+            while (_size > 0)
+            {
+                DeleteFirstNode();
+            }
+        }
     }
 
 
