@@ -143,7 +143,7 @@
             head = current.next;
 
             current.next = null;
-
+            current.prev = null;
         }
 
         public void DeleteLastNode()
@@ -167,7 +167,7 @@
         }
 
         public int Size() => _size;
-        
+
         public bool IsEmpty() => _size == 0;
 
         public void Clear()
@@ -177,8 +177,39 @@
                 DeleteFirstNode();
             }
         }
+
+        public void Reverse()
+        {
+            if (_size == 0)
+                return;
+
+            // ==> old solution 
+            /* T[] headValue = new T[_size];
+             int counter = _size - 1;
+             while (_size > 0)
+             {
+                 headValue[counter--] = head.value;
+                 DeleteFirstNode();
+             }
+             for(int i = 0; i < headValue.Length; i++)
+                 InsertAtEnd(headValue[i]);*/
+
+            Node<T> current = head;
+            Node<T> temp = null; // temp node to store the previous node in the current node
+            while (current != null)
+            {
+                temp = current.prev;
+                // swap the prev node and the next node
+                current.prev = current.next;
+                current.next = temp;
+                current = current.prev;
+            }
+
+            if (temp != null) // move the head 
+                head = temp.prev;
+        }
+
+
+
     }
-
-
-
 }

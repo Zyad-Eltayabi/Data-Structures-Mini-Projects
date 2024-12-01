@@ -14,15 +14,14 @@ namespace Data_Structures_Mini_Projects
             myDoublyLinkedList.InsertAtFront(2);
             myDoublyLinkedList.InsertAtFront(1);
 
-            Console.WriteLine("Linked List Content");
+            Console.WriteLine("\nLinked List Content");
+            myDoublyLinkedList.Print();
+
+            Console.WriteLine("\nLinked List Content After Reverse");
+            myDoublyLinkedList.Reverse();
             myDoublyLinkedList.Print();
 
          
-            Console.WriteLine($"The number of items = {myDoublyLinkedList.Size()}");
-
-            myDoublyLinkedList.Clear();
-
-            Console.WriteLine($"The number of items after exec clear method = {myDoublyLinkedList.Size()}");
 
         }
     }
