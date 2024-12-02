@@ -17,9 +17,15 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine("\nLinked List Content");
             myDoublyLinkedList.Print();
 
-            Console.WriteLine("\nLinked List Content After Reverse");
-            myDoublyLinkedList.Reverse();
-            myDoublyLinkedList.Print();
+            Node<int> getNode = myDoublyLinkedList.GetNode(-1);
+            if(getNode != null )
+            {
+                Console.WriteLine($"Node value = {getNode.value} "); 
+            }
+            else
+            {
+                Console.WriteLine("Node is not found");
+            }
 
          
 

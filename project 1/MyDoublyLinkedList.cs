@@ -209,7 +209,22 @@
                 head = temp.prev;
         }
 
+        public Node<T> GetNode(int index)
+        {
+            if (head == null || index < 0 || index >= _size)
+                return null;
 
+            int counter = 0;
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (counter == index)
+                    break;
+                counter++;
+                current = current.next;
+            }
+            return current;
+        }
 
     }
 }
