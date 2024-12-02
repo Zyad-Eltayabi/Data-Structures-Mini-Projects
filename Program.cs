@@ -17,17 +17,10 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine("\nLinked List Content");
             myDoublyLinkedList.Print();
 
-            Node<int> getNode = myDoublyLinkedList.GetNode(-1);
-            if(getNode != null )
-            {
-                Console.WriteLine($"Node value = {getNode.value} "); 
-            }
-            else
-            {
-                Console.WriteLine("Node is not found");
-            }
+            //Console.WriteLine($"Item (2) value is : {myDoublyLinkedList.GetItem(5)}");
+            int s = myDoublyLinkedList.GetItem(5);
 
-         
+
 
         }
     }
