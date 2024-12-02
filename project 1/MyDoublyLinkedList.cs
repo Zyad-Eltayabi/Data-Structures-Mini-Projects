@@ -229,10 +229,22 @@
         public T GetItem(int index)
         {
             if (head == null || index < 0 || index >= _size)
-              throw new IndexOutOfRangeException("Index was outside the bounds of the linked list.");
-                
+                throw new IndexOutOfRangeException("Index was outside the bounds of the linked list.");
+
             Node<T> node = GetNode(index);
             return node.value;
+        }
+
+        public bool UpdateItem(int index, T newValue)
+        {
+            Node<T> node = GetNode(index);
+            if (node != null)
+            {
+                node.value = newValue;
+                return true;
+            }
+            
+            return false;
         }
 
     }

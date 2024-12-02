@@ -17,10 +17,11 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine("\nLinked List Content");
             myDoublyLinkedList.Print();
 
-            //Console.WriteLine($"Item (2) value is : {myDoublyLinkedList.GetItem(5)}");
-            int s = myDoublyLinkedList.GetItem(5);
+            myDoublyLinkedList.UpdateItem(0, 500);
 
 
+            Console.WriteLine("\nLinked List Content After Update one item");
+            myDoublyLinkedList.Print();
 
         }
     }
