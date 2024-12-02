@@ -17,10 +17,10 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine("\nLinked List Content");
             myDoublyLinkedList.Print();
 
-            myDoublyLinkedList.UpdateItem(0, 500);
+            myDoublyLinkedList.InsertAfter(8, 500);
 
 
-            Console.WriteLine("\nLinked List Content After Update one item");
+            Console.WriteLine("\nLinked List Content After insert one item");
             myDoublyLinkedList.Print();
 
         }

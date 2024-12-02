@@ -243,7 +243,19 @@
                 node.value = newValue;
                 return true;
             }
-            
+
+            return false;
+        }
+
+        public bool InsertAfter(int previousNodeIndex, T newNodeValue)
+        {
+            Node<T> node = GetNode(previousNodeIndex);
+            if (node != null)
+            {
+                InsertAfter(node, newNodeValue);
+                return true;
+            }
+
             return false;
         }
 
