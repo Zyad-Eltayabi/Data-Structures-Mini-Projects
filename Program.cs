@@ -1,4 +1,5 @@
-﻿using DoublyLinkedList;
+﻿using Data_Structures_Mini_Projects.project_2;
+using DoublyLinkedList;
 
 namespace Data_Structures_Mini_Projects
 {
@@ -6,23 +7,26 @@ namespace Data_Structures_Mini_Projects
     {
         static void Main(string[] args)
         {
-            // Test doubly linked list
-            MyDoublyLinkedList<int> myDoublyLinkedList = new MyDoublyLinkedList<int>();
-            myDoublyLinkedList.InsertAtFront(5);
-            myDoublyLinkedList.InsertAtFront(4);
-            myDoublyLinkedList.InsertAtFront(3);
-            myDoublyLinkedList.InsertAtFront(2);
-            myDoublyLinkedList.InsertAtFront(1);
+            // Test My Queue 
 
-            Console.WriteLine("\nLinked List Content");
-            myDoublyLinkedList.Print();
+            MyQueue<int> myQueue = new MyQueue<int>();
 
-            myDoublyLinkedList.InsertAfter(8, 500);
+            myQueue.Push(10);
+            myQueue.Push(20);
+            myQueue.Push(30);
+            myQueue.Push(40);
+            myQueue.Push(50);
 
+            Console.WriteLine("\nPrint Queue Items");
+            myQueue.Print();
 
-            Console.WriteLine("\nLinked List Content After insert one item");
-            myDoublyLinkedList.Print();
+            myQueue.Pop();
+            Console.WriteLine("\nQueue after pop");
+            myQueue.Print();
 
+            Console.WriteLine($"Queue size = {myQueue.Size()}");
+            Console.WriteLine($"Queue front = {myQueue.Front()}");
+            Console.WriteLine($"Queue back = {myQueue.Back()}");
         }
     }
 }
