@@ -27,6 +27,41 @@ namespace Data_Structures_Mini_Projects
             Console.WriteLine($"Queue size = {myQueue.Size()}");
             Console.WriteLine($"Queue front = {myQueue.Front()}");
             Console.WriteLine($"Queue back = {myQueue.Back()}");
+
+            Console.WriteLine("______________________________________________________________");
+
+            // # Extension 1
+            Console.WriteLine("\n Item (2) = {0}", myQueue.GetItem(2));
+
+            // # Extension 2
+            myQueue.Reverse();
+            Console.WriteLine("\nQueue after reverse");
+            myQueue.Print();
+
+            // # Extension 3
+            myQueue.UpdateItem(2, 600);
+            Console.WriteLine("\nQueue after update item 2");
+            myQueue.Print();
+
+            // # Extension 4
+            myQueue.InsertAfter(2, 800);
+            Console.WriteLine("\nQueue after insert 800 after item(2) ");
+            myQueue.Print();
+
+            // # Extension 5
+            myQueue.InsertAtFront(1000);
+            Console.WriteLine("\nQueue after insert 1000 at front ");
+            myQueue.Print();
+
+            // # Extension 6
+            myQueue.InsertAtEnd(2000);
+            Console.WriteLine("\nQueue after insert 2000 at end ");
+            myQueue.Print();
+
+            // # Extension 7
+            myQueue.Clear();
+            Console.WriteLine("\nQueue after Clear() ");
+            myQueue.Print();
         }
     }
 }

@@ -49,5 +49,40 @@ namespace Data_Structures_Mini_Projects.project_2
         {
             return _myDoublyLinkedList.IsEmpty();
         }
+
+        public T GetItem(int index)
+        {
+            return _myDoublyLinkedList.GetItem(index);
+        }
+
+        public void Reverse()
+        {
+            _myDoublyLinkedList.Reverse();
+        }
+
+        public void UpdateItem(int index, T value)
+        {
+            _myDoublyLinkedList.UpdateItem(index, value);
+        }
+
+        public void InsertAfter(int previousItemIndex, T value)
+        {
+            _myDoublyLinkedList.InsertAfter(previousItemIndex, value);
+        }
+
+        public void InsertAtFront(T value)
+        {
+            _myDoublyLinkedList.InsertAtFront(value);
+        }
+
+        public void InsertAtEnd(T value)
+        {
+            _myDoublyLinkedList.InsertAtEnd(value);
+        }
+
+        public void Clear()
+        {
+            _myDoublyLinkedList.Clear();
+        }
     }
 }
