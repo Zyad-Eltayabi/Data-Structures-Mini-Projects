@@ -10,15 +10,17 @@ namespace Data_Structures_Mini_Projects.project_4
     public class MyDynamicArray<T>
     {
         private T[] _array;
+        private T[] _tempArray;
         private int _size;
         public MyDynamicArray(int size)
         {
             if (size < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(size), "The size must be a non-negative number.");
+                size = 0;
             }
-            _array = new T[size];
             _size = size;
+            _array = new T[size];
+            _tempArray = new T[0];
         }
         public void SetItem(int index, T item)
         {
@@ -44,6 +46,26 @@ namespace Data_Structures_Mini_Projects.project_4
         public int Size()
         {
             return _size;
+        }
+
+        public void Resize(int newSize)
+        {
+            if (_size < 0 || _size == newSize)
+                return;
+
+            _tempArray = new T[newSize];
+
+
+            if (newSize < _size)
+                _size = newSize;
+
+            for (int i = 0; i < _size; i++)
+            {
+                _tempArray[i] = _array[i];
+            }
+
+            _size = newSize;
+            this._array = _tempArray;
         }
     }
 }
