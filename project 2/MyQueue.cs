@@ -15,7 +15,7 @@ namespace Data_Structures_Mini_Projects.project_2
             _myDoublyLinkedList = new MyDoublyLinkedList<T>();
         }
 
-        public void Push(T value)
+        public virtual void Push(T value)
         {
             _myDoublyLinkedList.InsertAtEnd(value);
         }
