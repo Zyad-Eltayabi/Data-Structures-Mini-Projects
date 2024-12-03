@@ -106,5 +106,32 @@ namespace Data_Structures_Mini_Projects.project_4
             _array = _tempArray = new T[0];
             _size = 0;
         }
+
+        private bool IsIndexValid(int index)
+        {
+            if (index < 0 || index >= _size)
+            {
+                throw new ArgumentOutOfRangeException(nameof(index), "The index is not valid");
+            }
+            return true;
+        }
+
+        public void DeleteItemAt(int index)
+        {
+            IsIndexValid(index);
+
+            _tempArray = new T[_size - 1];
+
+            int counter = 0;
+
+            for (int i = 0; i < _size; i++) 
+            {
+                if (i != index)
+                    _tempArray[counter++] = _array[i];
+            }
+
+            _size -= 1;
+            _array = _tempArray;
+        }
     }
 }
