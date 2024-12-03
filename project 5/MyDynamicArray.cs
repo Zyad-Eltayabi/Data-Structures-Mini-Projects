@@ -124,7 +124,7 @@ namespace Data_Structures_Mini_Projects.project_4
 
             int counter = 0;
 
-            for (int i = 0; i < _size; i++) 
+            for (int i = 0; i < _size; i++)
             {
                 if (i != index)
                     _tempArray[counter++] = _array[i];
@@ -154,10 +154,29 @@ namespace Data_Structures_Mini_Projects.project_4
             }
 
             _size -= 1;
-            _array = _tempArray*/;
+            _array = _tempArray*/
+            ;
 
             DeleteItemAt(0);
 
+        }
+
+        public int Find(T item)
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                if (_array[i].Equals(item))
+                    return i;
+            }
+            return -1;
+        }
+
+        public void DeleteItemByValue(T item)
+        {
+            // first find the item's index
+            int indexItem = Find(item);
+            if (indexItem != -1)
+                DeleteItemAt(indexItem);
         }
     }
 }

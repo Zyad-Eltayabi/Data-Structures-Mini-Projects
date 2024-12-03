@@ -16,13 +16,20 @@ namespace Data_Structures_Mini_Projects
             myDynamicArray.SetItem(4, 50);
             myDynamicArray.Print();
 
-            myDynamicArray.DeleteFirstItem();
-            Console.WriteLine("Array after delete first item ");
+            int index = myDynamicArray.Find(40);
+            if(index != -1)
+            {
+                Console.WriteLine($"item 40 was found at index = {index}");
+            }
+            else
+            {
+                Console.WriteLine("the item is not found.");
+            }
+
+            myDynamicArray.DeleteItemByValue(40);
+            Console.WriteLine("Array items after delete item (40)");
             myDynamicArray.Print();
 
-            myDynamicArray.DeleteLastItem();
-            Console.WriteLine("Array after delete last item ");
-            myDynamicArray.Print();
 
 
         }
