@@ -16,13 +16,15 @@ namespace Data_Structures_Mini_Projects
             myDynamicArray.SetItem(4, 50);
             myDynamicArray.Print();
 
-
-      
-            myDynamicArray.DeleteItemAt(3);
-
-            Console.WriteLine("Array after delete item at index(3)");
-
+            myDynamicArray.DeleteFirstItem();
+            Console.WriteLine("Array after delete first item ");
             myDynamicArray.Print();
+
+            myDynamicArray.DeleteLastItem();
+            Console.WriteLine("Array after delete last item ");
+            myDynamicArray.Print();
+
+
         }
     }
 }

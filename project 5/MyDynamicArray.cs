@@ -133,5 +133,31 @@ namespace Data_Structures_Mini_Projects.project_4
             _size -= 1;
             _array = _tempArray;
         }
+
+        public void DeleteLastItem()
+        {
+            //Resize(_size - 1);
+            DeleteItemAt(_size - 1);
+        }
+
+        public void DeleteFirstItem()
+        {
+            // old solution
+            /*if(_size == 0)
+                return;
+
+            _tempArray = new T[_size - 1];
+
+            for (int i = 1; i < _size; i++)
+            {
+                _tempArray[i - 1] = _array[i];
+            }
+
+            _size -= 1;
+            _array = _tempArray*/;
+
+            DeleteItemAt(0);
+
+        }
     }
 }
