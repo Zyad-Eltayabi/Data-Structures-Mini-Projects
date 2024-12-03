@@ -76,17 +76,29 @@ namespace Data_Structures_Mini_Projects.project_4
             return _array[index];
         }
 
+        private void Swap(ref T num1, ref T num2)
+        {
+            T temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+
         public void Reverse()
         {
-            _tempArray = new T[_size];
-
+            // old solution
+            /*_tempArray = new T[_size];
             int counter = 0;
             for (int i = _size - 1; i >= 0; i--)
             {
                 _tempArray[counter++] = _array[i];
             }
+            _array = _tempArray;*/
 
-            _array = _tempArray;
+            int length = _size / 2;
+            for (int i = 0; i < length; i++)
+            {
+                Swap(ref _array[i], ref _array[_size - i - 1]);
+            }
         }
 
         public void Clear()
