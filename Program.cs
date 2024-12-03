@@ -16,13 +16,16 @@ namespace Data_Structures_Mini_Projects
             myDynamicArray.SetItem(4, 50);
             myDynamicArray.Print();
 
-            Console.WriteLine("Array after resize");
-            myDynamicArray.Resize(2);
+            Console.WriteLine($"Item(2) = {myDynamicArray.GetItem(2)}");
+
+            myDynamicArray.Reverse();
+            Console.WriteLine("Array items after reverse");
             myDynamicArray.Print();
 
-            Console.WriteLine("Array after resize");
-            myDynamicArray.Resize(10);
+            myDynamicArray.Clear();
+            Console.WriteLine("Array items after clear");
             myDynamicArray.Print();
+            Console.WriteLine($"Is array empty ==> {myDynamicArray.IsEmpty()}");
         }
     }
 }

@@ -67,5 +67,32 @@ namespace Data_Structures_Mini_Projects.project_4
             _size = newSize;
             this._array = _tempArray;
         }
+
+        public T GetItem(int index)
+        {
+            if (index < 0 || index >= _size)
+                throw new ArgumentOutOfRangeException(nameof(index));
+
+            return _array[index];
+        }
+
+        public void Reverse()
+        {
+            _tempArray = new T[_size];
+
+            int counter = 0;
+            for (int i = _size - 1; i >= 0; i--)
+            {
+                _tempArray[counter++] = _array[i];
+            }
+
+            _array = _tempArray;
+        }
+
+        public void Clear()
+        {
+            _array = _tempArray = new T[0];
+            _size = 0;
+        }
     }
 }
