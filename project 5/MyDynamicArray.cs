@@ -178,5 +178,26 @@ namespace Data_Structures_Mini_Projects.project_4
             if (indexItem != -1)
                 DeleteItemAt(indexItem);
         }
+
+        public void InsertAt(T item, int index)
+        {
+            IsIndexValid(index);
+
+            _tempArray = new T[_size + 1];
+
+            // copy all the values that before the given index 
+            for (int i = 0; i < index; i++)
+                _tempArray[i] = _array[i];
+
+            // set new item value in _tempArray
+            _tempArray[index] = item;
+
+            // copy all the items in _array from the given index until the end
+            for (int i = index; i < _size; i++)
+                _tempArray[i + 1] = _array[i];
+
+            _size++;
+            _array = _tempArray;
+        }
     }
 }
