@@ -1,6 +1,8 @@
 ﻿using Data_Structures_Mini_Projects.project_2;
+using Data_Structures_Mini_Projects.project_3;
 using Data_Structures_Mini_Projects.project_4;
 using Data_Structures_Mini_Projects.project_6;
+using Data_Structures_Mini_Projects.project_7;
 
 
 namespace Data_Structures_Mini_Projects
@@ -9,53 +11,63 @@ namespace Data_Structures_Mini_Projects
     {
         static void Main(string[] args)
         {
+            // Test My Stack 
 
-            MyQueueArr<int> myQueue = new MyQueueArr<int>();
+            MyStackArr<int> myStack = new MyStackArr<int>();
 
-            myQueue.Push(10);
-            myQueue.Push(20);
-            myQueue.Push(30);
-            myQueue.Push(40);
-            myQueue.Push(50);
+            myStack.Push(10);
+            myStack.Push(20);
+            myStack.Push(30);
+            myStack.Push(40);
+            myStack.Push(50);
 
-            Console.WriteLine("\nPrint Queue Items");
-            myQueue.Print();
 
-            myQueue.Pop();
-            Console.WriteLine("\nQueue after pop");
-            myQueue.Print();
+            Console.WriteLine("\nPrint Stack Items");
+            myStack.Print();
 
-            Console.WriteLine($"Queue size = {myQueue.Size()}");
-            Console.WriteLine($"Queue front = {myQueue.Front()}");
-            Console.WriteLine($"Queue back = {myQueue.Back()}");
+            myStack.Pop();
+            Console.WriteLine("\nStack after pop");
+            myStack.Print();
+
+            Console.WriteLine($"Stack size = {myStack.Size()}");
+            Console.WriteLine($"Stack front = {myStack.Top()}");
+            Console.WriteLine($"Stack back = {myStack.Bottom()}");
 
             Console.WriteLine("______________________________________________________________");
+
             // # Extension 1
-            Console.WriteLine("\n Item (2) = {0}", myQueue.GetItem(2));
+            Console.WriteLine("\n Item (2) = {0}", myStack.GetItem(2));
+
             // # Extension 2
-            myQueue.Reverse();
-            Console.WriteLine("\nQueue after reverse");
-            myQueue.Print();
+            myStack.Reverse();
+            Console.WriteLine("\nStack after reverse");
+            myStack.Print();
+
             // # Extension 3
-            myQueue.UpdateItem(2, 600);
-            Console.WriteLine("\nQueue after update item 2");
-            myQueue.Print();
+            myStack.UpdateItem(2, 600);
+            Console.WriteLine("\nStack after update item 2");
+            myStack.Print();
+
             // # Extension 4
-            myQueue.InsertAfter(2, 800);
-            Console.WriteLine("\nQueue after insert 800 after item(2) ");
-            myQueue.Print();
+            myStack.InsertAfter(2, 800);
+            Console.WriteLine("\nStack after insert 800 after item(2) ");
+            myStack.Print();
+
             // # Extension 5
-            myQueue.InsertAtFront(1000);
-            Console.WriteLine("\nQueue after insert 1000 at front ");
-            myQueue.Print();
+            myStack.InsertAtFront(1000);
+            Console.WriteLine("\nStack after insert 1000 at front ");
+            myStack.Print();
+
             // # Extension 6
-            myQueue.InsertAtEnd(2000);
-            Console.WriteLine("\nQueue after insert 2000 at end ");
-            myQueue.Print();
+            myStack.InsertAtEnd(2000);
+            Console.WriteLine("\nStack after insert 2000 at end ");
+            myStack.Print();
+
             // # Extension 7
-            myQueue.Clear();
-            Console.WriteLine("\nQueue after Clear() ");
-            myQueue.Print();
+            myStack.Clear();
+            Console.WriteLine("\nStack after Clear() ");
+            myStack.Print();
+
         }
     }
 }

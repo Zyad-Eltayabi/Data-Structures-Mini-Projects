@@ -16,7 +16,7 @@ namespace Data_Structures_Mini_Projects.project_6
             _myDynamicArray = new MyDynamicArray<T>(0);
         }
 
-        public void Push(T value)
+        public virtual void Push(T value)
         {
             _myDynamicArray.InsertAtEnd(value);
         }

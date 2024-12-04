@@ -181,7 +181,8 @@ namespace Data_Structures_Mini_Projects.project_4
 
         public void InsertAt(T item, int index)
         {
-            IsIndexValid(index);
+            if (index < 0 || index > _size)
+                index = 0;
 
             _tempArray = new T[_size + 1];
 
