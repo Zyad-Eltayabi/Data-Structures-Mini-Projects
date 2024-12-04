@@ -17,11 +17,25 @@ namespace Data_Structures_Mini_Projects
             myDynamicArray.Print();
 
 
-            Console.WriteLine("Array items after insert new item");
-            myDynamicArray.InsertAt(500, 1);
+            Console.WriteLine("\nArray items after insert 400 at front");
+            myDynamicArray.InsertAtFront(400);
+            Console.WriteLine("Array Size = " + myDynamicArray.Size());
             myDynamicArray.Print();
 
+            Console.WriteLine("\nArray items after insert 500 before index 2 ");
+            myDynamicArray.InsertBefore(500, 2);
+            Console.WriteLine("Array Size = " + myDynamicArray.Size());
+            myDynamicArray.Print();
 
+            Console.WriteLine("\nArray items after insert 600 after index 2 ");
+            myDynamicArray.InsertAfter(600, 2);
+            Console.WriteLine("Array Size = " + myDynamicArray.Size());
+            myDynamicArray.Print();
+
+            Console.WriteLine("\nArray items after insert 800 at the end ");
+            myDynamicArray.InsertAtEnd(800);
+            Console.WriteLine("Array Size = " + myDynamicArray.Size());
+            myDynamicArray.Print();
 
         }
     }

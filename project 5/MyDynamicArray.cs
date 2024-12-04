@@ -199,5 +199,37 @@ namespace Data_Structures_Mini_Projects.project_4
             _size++;
             _array = _tempArray;
         }
+
+        public void InsertAtFront(T item)
+        {
+            InsertAt(item, 0);
+        }
+
+        public void InsertBefore(T item, int index)
+        {
+            if (index < 1)
+            {
+                InsertAt(item, 0);
+                return;
+            }
+
+            InsertAt(item, index - 1);
+        }
+
+        public void InsertAfter(T item, int index)
+        {
+            if (index >= _size)
+            {
+                InsertAt(item, _size - 1);
+                return;
+            }
+            InsertAt(item, index + 1);
+        }
+
+        public void InsertAtEnd(T item)
+        {
+            Resize(_size + 1);
+            _array[_size - 1] = item;
+        }
     }
 }
