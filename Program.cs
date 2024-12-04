@@ -1,4 +1,6 @@
-﻿using Data_Structures_Mini_Projects.project_4;
+﻿using Data_Structures_Mini_Projects.project_2;
+using Data_Structures_Mini_Projects.project_4;
+using Data_Structures_Mini_Projects.project_6;
 
 
 namespace Data_Structures_Mini_Projects
@@ -8,35 +10,52 @@ namespace Data_Structures_Mini_Projects
         static void Main(string[] args)
         {
 
-            MyDynamicArray<int> myDynamicArray = new MyDynamicArray<int>(5);
-            myDynamicArray.SetItem(0, 10);
-            myDynamicArray.SetItem(1, 20);
-            myDynamicArray.SetItem(2, 30);
-            myDynamicArray.SetItem(3, 40);
-            myDynamicArray.SetItem(4, 50);
-            myDynamicArray.Print();
+            MyQueueArr<int> myQueue = new MyQueueArr<int>();
 
+            myQueue.Push(10);
+            myQueue.Push(20);
+            myQueue.Push(30);
+            myQueue.Push(40);
+            myQueue.Push(50);
 
-            Console.WriteLine("\nArray items after insert 400 at front");
-            myDynamicArray.InsertAtFront(400);
-            Console.WriteLine("Array Size = " + myDynamicArray.Size());
-            myDynamicArray.Print();
+            Console.WriteLine("\nPrint Queue Items");
+            myQueue.Print();
 
-            Console.WriteLine("\nArray items after insert 500 before index 2 ");
-            myDynamicArray.InsertBefore(500, 2);
-            Console.WriteLine("Array Size = " + myDynamicArray.Size());
-            myDynamicArray.Print();
+            myQueue.Pop();
+            Console.WriteLine("\nQueue after pop");
+            myQueue.Print();
 
-            Console.WriteLine("\nArray items after insert 600 after index 2 ");
-            myDynamicArray.InsertAfter(600, 2);
-            Console.WriteLine("Array Size = " + myDynamicArray.Size());
-            myDynamicArray.Print();
+            Console.WriteLine($"Queue size = {myQueue.Size()}");
+            Console.WriteLine($"Queue front = {myQueue.Front()}");
+            Console.WriteLine($"Queue back = {myQueue.Back()}");
 
-            Console.WriteLine("\nArray items after insert 800 at the end ");
-            myDynamicArray.InsertAtEnd(800);
-            Console.WriteLine("Array Size = " + myDynamicArray.Size());
-            myDynamicArray.Print();
-
+            Console.WriteLine("______________________________________________________________");
+            // # Extension 1
+            Console.WriteLine("\n Item (2) = {0}", myQueue.GetItem(2));
+            // # Extension 2
+            myQueue.Reverse();
+            Console.WriteLine("\nQueue after reverse");
+            myQueue.Print();
+            // # Extension 3
+            myQueue.UpdateItem(2, 600);
+            Console.WriteLine("\nQueue after update item 2");
+            myQueue.Print();
+            // # Extension 4
+            myQueue.InsertAfter(2, 800);
+            Console.WriteLine("\nQueue after insert 800 after item(2) ");
+            myQueue.Print();
+            // # Extension 5
+            myQueue.InsertAtFront(1000);
+            Console.WriteLine("\nQueue after insert 1000 at front ");
+            myQueue.Print();
+            // # Extension 6
+            myQueue.InsertAtEnd(2000);
+            Console.WriteLine("\nQueue after insert 2000 at end ");
+            myQueue.Print();
+            // # Extension 7
+            myQueue.Clear();
+            Console.WriteLine("\nQueue after Clear() ");
+            myQueue.Print();
         }
     }
 }
